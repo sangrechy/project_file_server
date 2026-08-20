@@ -1,129 +1,112 @@
-# project_file_server
+# 📁 FileCloud — Simple File Sharing Server
 
+FileCloud is a simple file-sharing server built with **Node.js and Express**. It allows devices on the same network to browse folders and download files through a web browser.
 
----
+## ✨ Features
 
-````markdown
-# 📁 FileCloud – Simple File Sharing Server
+* Browse folders and files
+* Download files
+* Breadcrumb navigation
+* Simple dark-mode interface
+* Secure file path handling
+* Works on Wi-Fi or Ethernet LAN
 
-**FileCloud** is a lightweight web-based file manager and downloader built with Node.js and Express. It allows users on the same network to browse, navigate, and download files via a clean user interface.
+## 🛠️ Requirements
 
-🔗 GitHub Repository: [https://github.com/sangrechy/project_file_server](https://github.com/sangrechy/project_file_server)
+* [Node.js](https://nodejs.org/) LTS
+* A browser
 
----
+## 📥 Installation
 
-## 📦 Features
-
-- 🗂️ Browse and navigate server folders
-- 📥 Download files from the browser
-- 🧭 Breadcrumb navigation
-- 🎨 Dark mode modern UI
-- 🛡️ Secured file path resolution
-- 🚀 Ready for LAN usage (Wi-Fi or Ethernet)
-
----
-
-## 📋 Requirements
-
-- ✅ [Node.js](https://nodejs.org/) (LTS version recommended)
-- No other tools or global installs required
-
----
-
-## 🛠️ Installation & Setup
-
-### 1️⃣ Clone the Repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/sangrechy/project_file_server.git
 cd project_file_server/app
-````
+```
 
-### 2️⃣ Install Dependencies
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+If dependencies are not already listed in `package.json`, install them with:
 
 ```bash
 npm install express multer
 ```
 
-> Note: `path`, `fs`, and `os` are built-in Node.js modules—no installation required.
+> `path`, `fs`, and `os` are built-in Node.js modules.
 
----
+### 3. Create the shared folder
 
-## 📁 Folder Structure
-
-```txt
-project_file_server/
-│
-├── /app
-│   ├── app.js               # Express.js backend
-│   ├── /public              # Static frontend assets
-│   │   ├── index.html       # Main web interface
-│   │   ├── script.js        # File/folder navigation logic
-│   │   └── styles.css       # UI styling
-│   ├── /files               # (Create manually) Shared files directory
-│
-├── README.md
-├── LICENSE
-```
-
-> 🔧 Make sure to **create the `/files` folder** inside `/app/` to store files you want to share:
+Create a `files` folder inside the `app` directory:
 
 ```bash
 mkdir files
 ```
 
----
+Put the files you want to share inside this folder.
 
-## ▶️ Run the Server
+## ▶️ Start the Server
+
+Run:
 
 ```bash
 node app.js
 ```
 
-You will see output like:
+The server will display an address such as:
 
-```txt
+```text
 File manager running at http://192.168.1.5:3000
 ```
 
-> Open that address in any device browser connected to the **same Wi-Fi network**.
+Open this address in a browser on any device connected to the same network.
 
----
+Example:
 
-## 🌐 Optional: External Access with Ngrok
+```text
+http://192.168.1.5:3000
+```
 
-To access from outside your local network:
+## 📁 Project Structure
 
-1. Install [Ngrok](https://ngrok.com/)
-2. Run:
+```text
+project_file_server/
+├── app/
+│   ├── app.js
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── script.js
+│   │   └── styles.css
+│   └── files/
+├── README.md
+└── LICENSE
+```
+
+## 🌐 External Access
+
+You can use **ngrok** to access the server from outside your local network.
 
 ```bash
 ngrok http 3000
 ```
 
-3. Share the public link Ngrok gives you (e.g. `https://abcd-1234.ngrok.io`)
+Ngrok will provide a public URL that can be opened from another network.
 
----
+## 🔐 Security
 
-## 🔐 Security Notes
-
-* Access is strictly limited to files inside the `/files` directory
-* No file uploads, deletions, or writes (read-only server)
-* For uploading support, implement `multer` with proper route control
-
----
+* Only files inside the `files` directory are accessible.
+* The server is read-only.
+* Files cannot be deleted or modified through the web interface.
+* File uploads are not enabled by default.
 
 ## 📜 License
 
-This project is licensed under the **MIT License**
+This project is licensed under the **MIT License**.
 
----
+## 🔗 Repository
 
-> 💡 Ideal for quick file sharing across mobile, laptop, or any device on your LAN
-
-```
-
----
-
-
-```
+https://github.com/sangrechy/project_file_server
