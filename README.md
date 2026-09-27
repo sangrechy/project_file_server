@@ -22,7 +22,7 @@ FileCloud is a simple file-sharing server built with **Node.js and Express**. It
 
 ```bash
 git clone https://github.com/sangrechy/project_file_server.git
-cd project_file_server/app
+cd project_file_server/v2   # or v1 for earlier iteration
 ```
 
 ### 2. Install dependencies
@@ -41,7 +41,7 @@ npm install express multer
 
 ### 3. Create the shared folder
 
-Create a `files` folder inside the `app` directory:
+Create a `files` folder inside the version directory (`v2` or `v1`):
 
 ```bash
 mkdir files
@@ -51,7 +51,7 @@ Put the files you want to share inside this folder.
 
 ## ▶️ Start the Server
 
-Run:
+Run (from the version directory, e.g. `v2/`):
 
 ```bash
 node app.js
@@ -75,16 +75,28 @@ http://192.168.1.5:3000
 
 ```text
 project_file_server/
-├── app/
+├── v1/
 │   ├── app.js
 │   ├── public/
 │   │   ├── index.html
 │   │   ├── script.js
 │   │   └── styles.css
 │   └── files/
+├── v2/
+│   ├── app.js
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── script.js
+│   │   └── styles.css
+│   └── files/
+├── .gitignore
 ├── README.md
 └── LICENSE
 ```
+
+### 📌 Version Breakdown
+* **v1:** Initial simple file-sharing server with basic UI.
+* **v2:** Enhanced modern UI and automatic local IPv4 interface detection for instant LAN access.
 
 ## 🌐 External Access
 
